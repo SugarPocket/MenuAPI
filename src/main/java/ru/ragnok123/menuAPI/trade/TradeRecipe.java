@@ -67,8 +67,12 @@ public class TradeRecipe {
 		}
 		nbt.putCompound("sell", NBTIO.putItemHelper(sellItem, -1));
 		nbt.putInt("tier", tier);
-		nbt.putInt("buyCountA", buyCountA);
-		nbt.putInt("buyCountB", buyCountB);
+		if(buyCountA != 0){
+			nbt.putInt("buyCountA", buyCountA);
+		}
+		if(buyCountB != 0){
+			nbt.putInt("buyCountB", buyCountB);
+		}
 		nbt.putInt("uses", uses);
 		nbt.putInt("maxUses", maxUses);
 		nbt.putByte("rewardExp", rewardsExp);
